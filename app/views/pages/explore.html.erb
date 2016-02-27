@@ -7,13 +7,24 @@
        </div>
     </div>
     <div class="col-xs-6">
-       <% for @p in @posts %>
-		 <div class="panel panel-default">
-           <div class="panel-body">
-              <p><%= @p.content %></p>
-           </div>
-       </div>
-		 <% end %>
+		 <div class="panel panel-default post-panel">
+           <div class="panel-body row">
+		 <%= render '/componets/post_ad' %>
+       		</div>
+			</div>
+		 
+		 
+		 
+		 <div class="panel panel-default post-panel">
+           <div class="panel-body row">
+		  	  		<p>This is echobase camp.  Welcome to the frozen planet of Hoth were we were left to die.  Sounds like fun doesn't it?  Not by my account but that doesn't change a darn thing anyways.</p>
+			  </div>
+		 </div>
+ 		 <div class="panel panel-default post-panel">
+            <div class="panel-body row">
+ 		 <%= render '/componets/post_ad' %>
+        		</div>
+ 			</div>
     </div>
     <div class="col-xs-3">
        <div class="panel panel-default">

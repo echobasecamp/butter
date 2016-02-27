@@ -2,13 +2,27 @@
 @import "bootstrap";
 
 body {
-	
-	background-color: rgba(212, 316, 512, .3);
-	
+		background-color: rgba(212, 316, 512, .3);
 }
 
 .navbar { 
-	
-	background-color: white;
+		background-color: white;
+}
 
+.post-panel {
+		margin-top: -21px;
+}
+
+.post-title {
+	text-align: left;
+	margin-left: 15px;
+	color: red;
+}
+.post-content {
+	text-align: left;
+	margin-left: 15px;
+}
+
+.post-links {
+	
 }
