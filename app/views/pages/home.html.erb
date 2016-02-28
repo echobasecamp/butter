@@ -14,8 +14,8 @@
 			  </div>
 			  <div class="row">
 				  <div class="col-sm-2">
-					  <h6>Posts: 169</h6>
-					  <h6>Stalkers: 0</h6>
+					  <h6>Posts: <%= current_user.posts.count %></h6>
+					  <h6>Stalkers: <%= current_user.followers.count %></h6>
 					  
 				  </div>
 			  </div>
@@ -23,7 +23,7 @@
        </div>
 		 <div class="panel panel-default">
 			 <div class="panel-body">
-				 <p>Other Interesting Things</p>
+				 <p></p>
 			</div>
 		 </div>
     </div>
