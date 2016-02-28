@@ -6,14 +6,16 @@
 	<div class"panel-body">  
   <div class="field" align="left">
  
-    <%= f.text_field :content, autofocus: true %>
+    <%= f.text_field :content, autofocus: true, class: "form-control" %>
+  
   </div>
 
-  <div class="actions" align="right">
-    <%= f.submit "Add Post" %>
-  </div>
+  
+    <span class="btn btn-submit"style=" float: right"><%= f.submit "Add Post" %></span>
+  
 </div>
 </div>
+<br />
 
 </center>
 
