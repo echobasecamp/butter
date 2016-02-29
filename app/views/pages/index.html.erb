@@ -1,29 +1,40 @@
+<!--
+
+
+
+
+
+
+																	-->
+<!--			RESERVED FOR NOTES ABOVE                            -->
+
 <% if !user_signed_in? %>
 	
 	<style>
 	
 	body {
-		
 		background: linear-gradient(
-			rgba(0,0,0,.5),
-			rgba(0,0,0,.5)),
-			url("/echobackground.png") no-repeat center center fixed;
+		rgba(0,0,0,.5),
+		rgba(0,0,0,.5)),
+		url("/echobackground.png") no-repeat center center fixed;
 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-		
 	}
+
 	h1 {
 		color: white;
 		font-weight: bold;
 	}
+
 	.container-index {
 		margin-right:15%;
 		margin-left: 15%;
 		color: white;
 	}
+
 	.text {
 		color: white;
 		font-weight: 600;
@@ -31,13 +42,12 @@
 	}
 	
 	.footer-links {
-		
 		text-align: center;
 		color: white;
 		margin-top: 30%;
 	}
+
 	.log-in {
-		
 		float: right;
 		height: 150px;
 		width: 300px;
@@ -45,7 +55,6 @@
 	}
 	
 	.sign-up {
-		
 		float: right;
 		height: 250px;
 		width: 300px;
@@ -56,58 +65,53 @@
 	
 	<div class="container-index row">
 		<div clas="col-sm-6">
-		<h1>Welcome to Echo Base Camp</h1>
-		<p class"text">
+			<h1>Welcome to Echo Base Camp</h1>
+			<p class"text">
 			Connect with your buddies. Chat with friends. Share your adventures.
-		</p>
-	</div>
-		
+			</p>
+		</div>
 		
 		<div class="col-sm-6">
-			
-		
-		<div class="log-in panel">
-		<%= form_for(:user, :url => session_path(:user)) do |f| %>
-		  <%= f.text_field :email %>
-		  <%= f.password_field :password %>
-		  <%= f.check_box :remember_me %>
-		  <%= f.label :remember_me %>
-		  <%= f.submit 'Sign in' %>
-		  <%= link_to "Forgot your password?", new_password_path(:user) %>
-		<% end %>
-		</div>
-		<div class="sign-up panel">
-			
-			 <%= form_for(:user, url: registration_path(:user)) do |f| %>
-			
-			
-	 	  <%= f.label :username %><br />
-	 	  <%= f.text_field :username, autofocus: true %>
-			
-	    <%= f.label :email %><br />
-	    <%= f.email_field :email %>
-		
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>	
-			
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>	
-			
-		<%= f.submit "Sign up" %>
-		
-		<% end %>
+			<div class="log-in panel">
+				<%= form_for(:user, :url => session_path(:user)) do |f| %>
+				<%= f.text_field :email %>
+		 		<%= f.password_field :password %>
+		  		<%= f.check_box :remember_me %>
+		  		<%= f.label :remember_me %>
+		  		<%= f.submit 'Sign in' %>
+		  		<%= link_to "Forgot your password?", new_password_path(:user) %>
+				<% end %>
+			</div>
+			<div class="sign-up panel">
 				
-		</div>
+				<%= form_for(:user, url: registration_path(:user)) do |f| %>
+
+		 		<%= f.label :username %><br />
+		 		<%= f.text_field :username, autofocus: true %>
+				
+		   	<%= f.label :email %><br />
+		   	<%= f.email_field :email %>
+			
+	      	<%= f.label :password %>
+	      	<% if @minimum_password_length %>
+	      	<em>(<%= @minimum_password_length %> characters minimum)</em>
+	      	<% end %><br />
+	      	<%= f.password_field :password, autocomplete: "off" %>	
+				
+	      	<%= f.label :password_confirmation %><br />
+	      	<%= f.password_field :password_confirmation, autocomplete: "off" %>	
+				
+				<%= f.submit "Sign up" %>
+			
+				<% end %>
+					
+			</div>
 		</div>
 	<div class="col-sm-12">
 		<p class="footer-links"> ABOUT HELP BLOG STATS JOBS TERMS PRIVACY COOKIES ADS INFO BRAND ADVERTISE BUSSINESS MEDIA</p>
 	</div>
 	
 	</div>
-	
 	
 <% else %>
 	<script>document.location = "/home"</script>
