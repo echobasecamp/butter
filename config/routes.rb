@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   resources :relationships, only: [:create, :destroy]
   resources :posts
+  resources :articles
   
   
   
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   get '/explore' => 'pages#explore'
   get '/help' => 'pages#help'
 
-  get '/server' => 'articles#server#server_1'
+  get '/server' => 'articles#server'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

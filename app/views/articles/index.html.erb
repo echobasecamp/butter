@@ -1,0 +1,281 @@
+<!--
+
+
+
+
+
+
+                                                              -->
+<!--      RESERVED FOR NOTES ABOVE                            -->
+<style>
+	
+	code {
+		background-color: lightgrey;
+	}
+
+	.important {
+		background-color: black;
+		color: #FF8300;
+		padding: 20px;
+	}
+
+
+
+</style>
+<div class="row">
+    <div class="col-xs-3">
+       	<div class="panel panel-default">
+        	<div class="panel-body">
+            	<p>stats</p>
+           	</div>
+       	</div>
+    </div>
+    <div class="col-xs-6">
+		<div class="panel panel-default post-panel">
+        	<div class="panel-body row">
+				<%= render '/componets/post_ad' %>
+       		</div>
+		</div> 
+		<div class="panel panel-default post-panel">
+           	<div class="panel-body row">
+		  	<div class="pad">
+		  	<!-- start of article -->
+
+		  	<center>
+		  		<h1><u>Creating Your Own Web Server.</u></h1><hr>
+		  		<h4><i>A trial by fire, lesson guide.</i></h4><hr>
+		  	</center>	
+		  		<p>&emsp; I have created plenty of very simple webpages in the past.  Like anything as you grow and learn you start to need more resources to create better creative projects.  After looking around on the internet I found plenty of places that would rent space on their servers for a nominal monthly or yearly fee.  Not unreasonable if you are a business were a few dollars a month makes a very little impact on your bottom line.</p> 
+
+				<p>&emsp;For me, a subscription based service to host my content seemed astronomically insane. It starts out with $5 - $10 for these guys, then another $5 - $10 for the other guys, so on and such forth. By the time all is said and done those little purchases add up quickly. Not to mention the limitations you have by using those services.
+				</p>
+
+				<p>&emsp;After evaluating the cost per month I also started realizing that I was using databases more and more and having a blast doing so.  This left me wondering... how am I ASSURED that the information that I have collected to run my webpage is not being peeked at by someone on the other side of the network.  Knowing that the owner of a computer is it’s “Supreme Overlord”, a server being no different, left me feeling uneasy.  If there was ever a sever problem how do you pull the plug until you can get it fixed?</p>
+
+				<p>&emsp;With the above said please, bare in mind that these reasons are my thoughts, feeling and opinions.  I don’t want to hear your non-constructive comments and criticisms.  You are entitled to how you feel, and I will respect that.</p>
+
+				<p>&emsp;I ran around the area hit all the prominent computer stores (no I am not talking about your best buys and other similar stores) and quickly added to my contacts list, and even better, real life friends list.  I gather plenty of information on different ways to get this project up and running. Here were the “trial by fire” begins...</p>
+
+				<hr>
+
+				<p><h3>The Box ~</h3></p>
+
+				<P>&emsp;First things first lets talk about the rack server. This piece of equipment confuses the "every day Joe". Is it a computer? Why don't you need a monitor, keyboard, or mouse? Hey, you left your computer on, don't you want to turn it off before we go? There is a webpage in there?</p>
+
+				<p>&emsp;The plainest way to describe what the rack does is to say it processes requests, puts the requests together, and then servers the file or files to the user that requested them. For the purposes of a web server, we want the machine to be able to distribute common types of web files to be displayed in a users browser. This means we want the users to have access to the webpage root folder so they can start requesting different file types that may be in the webpage. (" .html, .htm, .css, .js, .jquery, .php, DATABASE queries, .png, .jpeg, .jpg, .gif, etc")</p>
+
+				<p>&emsp;So lets get onto the unit itself. Its a refurbished Hewlett-Packard Proliant G6 - rack mount server.  I found a place in the area I live so I ordered me up one. The place is called <a href="http://www.serverworlds.com">Server Worlds</a>, located in Plymoth, MN.  I called late morning and ordered my unit, by early afternoon I ran down and picked it up.  After quick stop at Micro Center, a joy ride through rush hour traffic, we were ready to go.</p>
+
+				<p>
+					<ul>
+						<li>Hewllet-Packard Proliant G6</li>
+				    	<li>32 gigs of EEC ram</li>
+				    	<li>2x Xenon quad core 2.97 ghz processors</li>
+				    	<li>2x 72 gig Sas hard drives (mirrored)</li>
+				    	<li>8 hot swap hard drive bays</li>
+				    	<li>4 Ethernet ports (back)</li>
+				    	<li>2 VGA inputs (one front one back)</li>
+				    	<li>2 USB inputs (front)</li>
+				    	<li>DVD/CD reader</li>
+				    	<li>Some Other assortment of old time-y plug ins</li>
+					</ul>
+				</p>
+				   
+				<p>&emsp;After getting this baby home a whole new host of problems immediatly started. I failed to realize that I never truly did much thinking about how I was going to network this into my exhisting set-up.  I grabbed my roll of cat5 cable and RJ45 connectors and started running wire through the house. (my father just looked at me and kinda shook his head, and had no intentions on even asking "What the heck I was doing".</p>
+
+				<p>&emsp;After messing up all my RJ45 connectors and getting a few more, retrying everything once again we were in luck. (I also want to stress the fact that making a mistake or two is not a bad thing, this is how you get good at what you are doing. So plan on making a few.) Hit the on button and watched the BIOS - (Basic Input Output System) kicked in like it should, and we were on the road to installing an OS - (Operating System)</p>
+
+				<hr>
+
+				<h3>Choosing the OS</h3><hr>
+
+				<p>&emsp;If you are even thinking about anything other than a flavor of linux, do not pass go do not collect $200. There are instances were Windows flavor might be more suited but there are very specific reseasons for doing so. If you do decide to go with Windows best of luck to you I guess your on you're own from here. I personally don't like Microsofts support when it comes to the non-comsumer level products. Secondly with Microsoft after you have purchased a product they don't give a !@#$%^&*( about your device or the operating system that is running on it.  Their answer to me has been, we will give you a new one because it's cheaper for us, never mind the fact you have to spend a whole day re-doing set-ups, and installations. (which I tried to explain costs me money everytime I have to take a day off from my projects.) Lastly if you had the word apple float through your head ask yourself if you are working on a phone or tablet. This pretty much sums up their level of knowelege on the subject.</p>
+
+				<p>&emsp;I hope I didn't scare you with the above paragraph. I work on my server, with all my devices no problem... including my phone. Linux is your OS for your server and is not what you have to run for your personal work station. If you like Apples OSX the best use it, like wise if you are a Windows person there you go, and of course a flavor of desktop linux works just fine.</p>
+
+				<p>&emsp;I spent a few weeks just burning linux distros to DVD's and installing them completely wiping everything off the hard drives to see which one I liked the best. Here is a list of webpages were you can get them.  They are open source so you do not have to pay a thing for the software, but if you are making money with a verision I would say make a small one time donation to the version of your choice, but you don't have to.</p>
+				
+				<p>
+					<ul>
+						<li><a href="http://www.ubuntu.com/server">Ubuntu Server</a></li>
+						<li><a href="https://www.centos.org/download/">CentOs</a></li>
+						<li><a href="https://getfedora.org/en/server/download/">Fidora</a></li>
+						<li><a href="https://www.debian.org/distrib/">Debian</a></li>
+						<li><a href="https://sourceforge.net/projects/architect-linux/">Architect</a></li>
+						<li><a href="https://wiki.archlinux.org/index.php/Server">Archlinux</a></li>
+						<li><i>And for a laugh I included this one please don't try anything like this, just show to people have way to much free time, lol.</i></li>
+						<li><a href="http://hannahmontana.sourceforge.net/downloads.html">Hannah Montana linux</a></li>
+					</ul>
+				</p>
+
+				<p>&emsp;I finally landed on Ubuntu Server 15.10 as my perferred OS.  There is nothing I found particularlly special about this OS, it works, and I happen to like the commands that I have to type in the termanial better than some of the other OS's.</p>
+
+				<p><h3>Here is where you download and burn a dvd of the OS, or make a USB boot drive.</h3></p>
+
+				<p>&emsp;Make sure your server is completly shutdown and insert your OS disk into the DVD tray or USB drive into a USB slot. You also will need a wired keyboard and a VGA monitor of some sort (one of my tv's had a VGA input on it so I just used that for a few hours), which you can disconnect later because you won't be needing them if you run it without a desktop. (desktops are the GUI "Graphical User Interfaces" that you are accustom to with Apple or Windows.)  Follow the set by step guide and it will walk you through the steps.  It will find your ineternet connection, and automatically set that part up for you with any luck.  I have had it ask me a whole bunch of questions about configuration on other distros, you just have to dig for some quick answers and you can get it to work if thats the case.</p>
+
+				<p>&emsp;Set up your user and password. THE PASSWORD YOU SET UP FOR YOUR "SUPER USER" WILL BE THE ONE YOU ARE GOING TO HAVE TO WORK WITH WHILE SETTING YOUR MACHINE UP AND RUNNING IT IN THE FUTURE. DO NOT FORGETT IT OR YOUR WILL HAVE TO START OVER. I always set it to something like "secret" or "webadmin" while I am installing a ton of pieces of software.  When I am finish and everything is working right I change it to something secure. Trust me the last thing you want while doing your intial setup is having to put in a super complex password every 5 seconds.</p>
+
+				<p>&emsp;It gets to a point where it does ask you what you want to do on a few things. For hard drive install I always pick use the whole thing, completely wipe everything else. It also will give you a menu to pick and choose what packages or software you want the installer to run, with a list of like 8 things you can choose from. Highlight SSH-Server hit space bar, DNS - Spacebar, LAMP - Spacebar, Postgresql-Spacebar, Java tomcat -spacebar, Samba - Spacebar mail server - Spacebar and hit enter. Leave all other passwords blank you will be able to set them later. SSH is your link to your servers console.  It's like opening your termerinal on a Mac or Command Propt on Windows from another computer.  It stands for Secure Shell. Start being "Linux Minded" and take full controll over what, when, how, and why things are doing with your machine. Anything else that pops up just by pass unless you know what it is and know that you will need it. Lastly it asks to install GRUB bootloader, thats a yes. When its done. the disk should pop out of the DVD drive and it will issue itself a reboot. If you used a USB drive, for the love of all things in this world, don't be like me and always forget to remove this after the machine shuts down and before it reboots. Truthfully it won't hurt a thing but becomes very annoying after you forgett more than once.</p>
+
+				<hr>
+
+				<h3>It's Alive</h3><hr>
+
+				<p>&emsp;Now its time to get this show on the road. Type these two commands into the CLI (Command Line Interface) or your plain black and white screen of seemingly nothing-ness. Enter your password and let it do its thing.</p>
+				<code> sudo passwd</code><br />
+				<p>This is your ROOT PASSWORD. NO OTHER PASSWORD IS MORE IMPORTANT THAN THIS ONE. NO OTHER PASSWORD IS MORE IMPORTANT THAN THIS ONE. NO OTHER PASSWORD IS MORE IMPORTANT THAN THIS ONE.</p>
+				<code> sudo apt-get install update</code><br />
+				<code> sudo apt-get install upgrade</code><br /><br />
+				<p>Just for good meassure run the next line even though we told it to do it in the install.</p>
+				<code> sudo apt-get install openssh-server</code><br />
+				<code> sudo apt-get install openssh-client</code><br /><br />
+				<p>Next you are going to want to connect to your server remotely with ssh-client on your Mac, Windows, or Linux laptop or desktop machine. So on your sever type in this command.</p>
+
+				<code>ifconfig</code><br />
+
+				<p>It will list off your ip address. If you are hooked up to a router you will get something like 192.168.10.101 This is your LAN ip (Local Area Network). This is your fastest option if your laptop or desktop is hooked up to the LAN. If you want to get your internet ip so you can reach it from your WAN (Wide Area Network) in other words over your internet connect you will have to get that information by simply googling "whats my ip" with a device on the same internet connection. Note: if you have a wifi router in-between you and your modem sometimes it will not give you the correct piece of information but I personally have not run into this problem.  Your ip should be something like 45.147.253.25 This is the address you want to use from abroad. Now to connect...</p>
+
+				<h3>Apple Users</h3><br />
+
+				<p> Open up a terminal window. (type terminal in your spotlight at the top right-hand corner and type terminal) Open a new remote connection "CMD+SHIFT+K" Select SSH and at the bottom type in your user in first box. Ip address in the box below. If will save the connection something like this. |username|@|your_ip_address| Enter your user password and you should be good to go.</p>
+
+				<h3>Windows and Linux Users</h3><br />
+				<p>Google PuTTy and download it, install and open. Same as the Apple users it will ask what you want to do select SSH, put in your username, ip address, and if I remember right you have a place for your password so you can save it. Go ahead and connect.</p>
+
+				<i><p class="important">You must make sure that port forwarding on your router is enabled if you have one. Port 22 must be open.  This is how SSH connects to your server.</p></i>
+
+				<p>Now we can cut,copy, and paste some commands into your open connection. These commands are going to be a whole bunch of things that you need for a simple web server plus some extras that you may want to play with in the future. They are all realitivly small so I wouldn't start trying to pick and choose seperate packages at this point.  If you want to you can but, there is a method to my madness.</p>
+
+				<code>sudo add-apt-repository -y ppa:webupd8team/java</code><br /><br />
+				<code>sudo apt-add-repository ppa:brightbox/ruby-ng</code><br /><br />
+				<code>sudo apt-get install update</code><br /><br />
+				<code>sudo apt-get install build-essential libssl-dev libyaml-dev libreadline-dev openssl curl git-core zlib1g-dev bison libxml2-dev libxslt1-dev libcurl4-openssl-dev libsqlite3-dev libffi-dev libmysqlclient-dev sqlite3 php5-fpm sqlite3 python-software-properties nodejs oracle-java9-installer imagemagick
+
+				</code><br /><br />
+				<code>sudo apt-get update && apt-get upgrade</code><br /><br />
+				<code>sudo apt-get install ruby2.2 ruby2.2-dev</code><br /><br />
+				<code>sudo apt-get install ruby-switch</code><br /><br />
+				<code>sudo apt-get install bundler</code><br /><br />
+				<code>sudo ruby-switch --set ruby2.2</code><br /><br />
+				<code>sudo gem install rails --no-rdoc --no-ri</code><br /><br />
+				<code>sudo gem install mysql2</code><br /><br />
+				<code>sudo gem update</code><br /><br />
+				<p>Next it may seem like we are doing some back tracking because we are. You have to be some what of an Alchemist when you install stuff on Linux sometimes.</p>
+
+				<code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7</code><br /><br />
+				<code>sudo nano /etc/apt/sources.list.d/passenger.list</code><br /><br />
+				<p>Paste the next line into the blank document that appears. Hit ctl+x, Y, Enter afterwards</p><br />
+				<code>deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main</code><br /><br />
+				<code>sudo chmod 600 /etc/apt/sources.list.d/passenger.list</code><br /><br />
+				<code>sudo apt-get install libapache2-mod-passenger</code><br /><br />
+				<code>sudo a2enmod passenger</code><br /><br />
+				<code>sudo service apache2 restart</code><br /><br />
+				<code>sudo rm /usr/bin/ruby</code><br /><br />
+				<code>sudo ln -s /usr/local/bin/ruby /usr/bin/ruby</code><br /><br />
+				<code>cd ~</code><br /><br />
+				<code>rails new testapp --skip-bundle -d mysql</code><br /><br />
+				<code>cd testapp</code><br /><br />
+				<code>sudo nano Gemfile</code><br /><br />
+				<p>Uncomment "delete the # in front of" # gem 'therubyracer',  platforms: :ruby</p><br />
+				<code>sudo gem update</code><br /><br />
+				<code>bundle install</code><br /><br />
+				<code>bin/rake db:migrate</code><br /><br />
+				<code>sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/testapp.conf</code><br /><br />
+				<code>sudo nano /etc/apache2/sites-available/testapp.conf</code><br /><br />
+				<p>Change the ServerName and SeverAliasto your ip address or website name if its pointing to your ip address. Change Document Root to /home/"YOUR_USER_NAME/tesapp/public. CTL+X, Y, Enter.</p> <br />
+				<code>
+				<VirtualHost *:80><br />
+				    &emsp;ServerName echobase.camp<br />
+				    &emsp;ServerAlias www.echobase.camp<br />
+				    &emsp;ServerAdmin webmaster@localhost<br />
+				    &emsp;DocumentRoot /home/ruby/testapp/public<br />
+				    &emsp;RailsEnv development<br />
+				    &emsp;ErrorLog ${APACHE_LOG_DIR}/error.log<br />
+				    &emsp;CustomLog ${APACHE_LOG_DIR}/access.log combined<br />
+				    &emsp;<Directory "/home/ruby/testapp/public"><br />
+				        &emsp;Options FollowSymLinks<br />
+				        &emsp;Require all granted<br />
+				    </Directory><br />
+				</VirtualHost><br />
+				</code><br /><br />
+				<code>sudo a2ensite testapp</code><br /><br />
+				<code>sudo a2dissite 000-default</code><br /><br />
+				<code>sudo service apache2 restart</code><br /><br />
+				<code>sudo su</code><br /><br />
+				<code>sudo a2dissite 000-default</code><br /><br />
+				<code>sudo apt-get update && apt-get upgrade</code><br /><br />
+				<code>sudo mkdir ~/ruby</code><br /><br />
+				<code>cd ~/ruby</code><br /><br />
+				<code>sudo wget http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.4.tar.gz</code><br /><br />
+				<code>sudo tar -xzf ruby-2.1.4.tar.gz</code><br /><br />
+				<code>cd ruby-2.1.4</code><br /><br />
+				<code>sudo ./configure</code><br /><br />
+				<code>sudo make</code><br /><br />
+				<code>sudo make install</code><br /><br />
+				<code>ruby -v</code><br /><br />
+				<code>sudo rm -rf ~/ruby</code><br /><br />
+				<code>sudo gem update</code><br /><br />
+				<code>cd testapp</code><br /><br />
+				<code>sudo gem install bundler</code><br /><br />
+				<code>bundle install</code><br /><br />
+				<code>sudo apt-get update && apt-get upgrade</code><br /><br />
+				<code>cd testapp</code><br /><br />
+				<code>bin/rake db:migrate RAILS_ENV=development</code><br /><br />
+				<p>Some more stuff for good measure.</p>
+				<code>sudo apt-get libapache2-mod-perl2</code><br /><br />
+				<code>sudo apt-get libapache2-mod-python</code><br /><br />
+				<code>sudo apt-get libapache2-mod-php5</code><br /><br />
+
+				<p>Now you are setup with a pretty heavy duty webserver and developement machine. If you are coding a ruby on rails app goto town. If not just switch your apache2 conf file back to default and use the LAMP stack. switch back use code below.</p>
+				<code>sudo a2dissite testapp</code><br /><br />
+				<code>sudo a2ensite 000-default</code><br /><br />
+				<code>sudo service apache2 restart</code><br /><br />
+
+				<p>Reboot your server</p>
+				<p>Next since you got this far you probably want to hear about the dumb things that I did in coming up with is dirty laundry list, so you don't make the same mistakes. I'll get to that on the next page.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+		  	
+
+		  			
+			
+
+
+
+
+
+
+
+
+
+		  	<!-- end article -->
+		  	</div>
+			</div>
+		</div>
+ 		<div class="panel panel-default post-panel">
+            <div class="panel-body row">
+ 		 		<%= render '/componets/post_ad' %>
+        	</div>
+ 		</div>
+    </div>
+    <div class="col-xs-3">
+       	<div class="panel panel-default">
+         	<div class="panel-body">
+				
+            <%= render '/componets/ad_responsive' %>
+				 
+           </div>
+       </div>
+    </div>
+</div>
